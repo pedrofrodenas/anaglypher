@@ -72,3 +72,8 @@ name = ''.join(choices(string.ascii_uppercase + string.digits, k=5))
 
 cv2.imwrite('results/{0}.jpg'.format(name),Image3D)
 ```
+
+![results/WICZG.jpg](results/WICZG.jpg)
+![results/H1GF3.jpg](results/H1GF3.jpg)
+![results/WICZG.jpg](results/WICZG.jpg)
+![results/7SNE1.jpg](results/7SNE1.jpg)
