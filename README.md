@@ -12,8 +12,14 @@ My approach uses outdoor images. The vanishing point is the place where two or m
 
 ### Data
 
-This aproach needs outdoor images containing vanishing point. Like this:
+This aproach needs outdoor images containing vanishing point.
 <p align="center">
   <img src="images/carretera.jpg" width="324" height="216">
+</p>
+
+### Model
+
+<p align="center">
+  <img src="img/diag.png">
 </p>
 
