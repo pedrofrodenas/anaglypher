@@ -30,7 +30,11 @@ Then apply Hough transform to obtain the main lines in the image.
   <img src="img/hough.png" width="400" height="265">
 </p>
 
-Transforming the coordinates 	θ	
+Transforming the parametric space 	(θ,ρ) to (x,y) and plot the lines.
+
+<p align="center">
+  <img src="img/lines.png" width="400" height="265">
+</p>
 
 
 
