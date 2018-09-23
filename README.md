@@ -77,3 +77,7 @@ cv2.imwrite('results/{0}.jpg'.format(name),Image3D)
 ![results/H1GF3.jpg](results/H1GF3.jpg)
 ![results/WICZG.jpg](results/WICZG.jpg)
 ![results/7SNE1.jpg](results/7SNE1.jpg)
+
+## License
+(c) 2013 Pedro Rodenas. MIT License
+
