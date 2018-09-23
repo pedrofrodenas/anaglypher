@@ -42,4 +42,9 @@ Then we get the cut points between lines and select vanishing point as the cut p
   <img src="img/vanish.png" width="400" height="265">
 </p>
 
+With the vanishing point coordinates, we build a Depth Map.
+
+<p align="center">
+  <img src="img/cap1.png" width="400" height="265">
+</p>
 
