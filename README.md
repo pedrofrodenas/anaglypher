@@ -21,6 +21,6 @@ This aproach needs outdoor images containing vanishing point.
 
 First apply canny transform.
 <p align="center">
-  <img src="img/canny.png" style="width:500px;height:600px;">
+  <img src="img/canny.png" style="width:100px;height:100px;">
 </p>
 
