@@ -36,6 +36,10 @@ Transforming the parametric space 	(θ,ρ) to (x,y) and plot the lines.
   <img src="img/lines.png" width="400" height="265">
 </p>
 
+Then we get the cut points between lines and select vanishing point as the cut point that have most cut points closer.
 
+<p align="center">
+  <img src="img/vanish.png" width="400" height="265">
+</p>
 
 
