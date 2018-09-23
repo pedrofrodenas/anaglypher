@@ -12,11 +12,35 @@ import cv2
 import matplotlib.pyplot as plt
 import utils
 import hough
+import string
+from random import choices
+import matplotlib.patches as mpatches
 
 
-def ConvertImageto3D(image):
+def plot_CutPoints(img, cutP, VanishP):
     
-    shapes = cv2.resize(image, (0,0), fx=0.4, fy=0.4)
+    
+    fig, ax = plt.subplots()
+    ax.imshow(img)
+    
+    ax.axis('off')
+    red_patch = mpatches.Patch(color='firebrick', label='Cut Points')
+    blue_patch = mpatches.Patch(color='blue', label='Vanishing Point')
+    
+    for p in cutP:
+    
+        ax.plot(p[1],p[0], '+', linewidth=5, color='firebrick')
+        
+    # Plot intersection point in blue
+    ax.plot(VanishP[1],VanishP[0], '+', linewidth=7, color='blue')
+    ax.legend(handles=[red_patch, blue_patch])
+    
+    
+
+
+def ConvertImageto3D(image, xscale, yscale):
+    
+    shapes = cv2.resize(image, (0,0), fx=xscale, fy=yscale)
     
     M, N, D = shapes.shape
     
@@ -39,8 +63,11 @@ def ConvertImageto3D(image):
     indicies, H = hough.hough_peaks(H, 4,threshold=0.7, nhood_size=80) # find peaks
     hough.plot_hough_acc(H) # plot hough space, brighter spots have higher votes
     hough.hough_lines_draw(shapes, indicies, rhos, thetas)
-
+    
+    
     plt.imshow(shapes)
+    plt.title('Lines Detected')
+    plt.axis('off')
     
     
     x, y = utils.hough_lines_coords(indicies, rhos, thetas)
@@ -49,23 +76,13 @@ def ConvertImageto3D(image):
     
     # Get the intersection points
     CutPoints = utils.get_intersection(coefficients, M, N)
-    
-    
-    # Plot the intersection points in the image
-    fig, ax = plt.subplots()
-    ax.imshow(shapes)
-
-    for p in CutPoints:
-    
-        ax.plot(p[1],p[0], '+', linewidth=5, color='firebrick')
         
         
     # Selection of intersection point that is closer to everyone else
     VanishP = utils.less_distancePoint(CutPoints)
     
-    
-    # Plot intersection point in blue
-    ax.plot(VanishP[1],VanishP[0], '+', linewidth=7, color='blue')
+    # Plot cut points and vanishing point
+    plot_CutPoints(shapes, CutPoints, VanishP)
     
     # Memory reservation for DephMap
     DepthMap = np.zeros((M,N))
@@ -129,11 +146,18 @@ def ConvertImageto3D(image):
 # read in shapes image and convert to grayscale
 shape = cv2.imread('images/carretera.jpg')
 
-Image3D = ConvertImageto3D(shape)
 
+# Scale input image to less time computation
+Image3D = ConvertImageto3D(shape, xscale=0.4, yscale=0.4)
+
+plt.figure()
 plt.imshow(Image3D)
+plt.title('Anaglyph 3D')
+plt.axis('off')
 
-cv2.imwrite('imgresult.jpg',Image3D)
+name = ''.join(choices(string.ascii_uppercase + string.digits, k=5))
+
+cv2.imwrite('results/{0}.jpg'.format(name),Image3D)
     
     
     
