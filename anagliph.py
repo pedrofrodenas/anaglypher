@@ -12,8 +12,6 @@ import cv2
 import matplotlib.pyplot as plt
 import utils
 import hough
-import string
-from random import choices
 import matplotlib.patches as mpatches
 
 
@@ -149,21 +147,4 @@ shape = cv2.imread('images/carretera.jpg')
 
 # Scale input image to less time computation
 Image3D = ConvertImageto3D(shape, xscale=0.3, yscale=0.3)
-
-plt.figure()
-plt.imshow(Image3D)
-plt.title('Anaglyph 3D')
-plt.axis('off')
-
-name = ''.join(choices(string.ascii_uppercase + string.digits, k=5))
-
-cv2.imwrite('results/{0}.jpg'.format(name),Image3D)
-    
-    
-    
-    
-    
-    
-    
-        
 
