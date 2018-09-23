@@ -20,6 +20,6 @@ This aproach needs outdoor images containing vanishing point.
 ### Model
 
 <p align="center">
-  <img src="img/diag.png">
+  <img src="img/diag.png" width="241" height="416">
 </p>
 
