@@ -19,7 +19,8 @@ This aproach needs outdoor images containing vanishing point.
 
 ### Model
 
+First apply canny transform.
 <p align="center">
-  <img src="img/diag.png" width="241" height="416">
+  <img src="img/canny.png">
 </p>
 
