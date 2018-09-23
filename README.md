@@ -6,7 +6,8 @@ Convert 2D images to 3D anaglyph image using vanishing point approach
 Our study tries to estimate a depth map from a mono image.  It is a difficult task and there are different ways to approach it.
 My approach uses outdoor images. The vanishing point is the place where two or more parallel lines (real or imaginary) converge towards infinity in an image.  For example, the lines that generate the edges of a road and its projection towards infinity. The place where these lines intersect in a literal or imaginary way, is what we know as the vanishing point.
 
-![img/vanishing.png](img/vanishing.png?v=4&s=100)
+![img/vanishing.png](img/vanishing.png)
+<img src="https://img/vanishing.png" width="100" height="100">
 
 ### Data
 
