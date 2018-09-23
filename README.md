@@ -9,9 +9,11 @@ My approach uses outdoor images. The vanishing point is the place where two or m
 <p align="center">
   <img src="img/vanishing.png" width="622" height="190">
 </p>
-<img src="img/vanishing.png" width="622" height="190" align="center">
-
 
 ### Data
 
-This aproach needs outdoor images containing vanishing point.
+This aproach needs outdoor images containing vanishing point. Like this:
+<p align="center">
+  <img src="images/carretera" width="972" height="648">
+</p>
+
