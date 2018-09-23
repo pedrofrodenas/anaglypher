@@ -30,7 +30,13 @@ Then apply Hough transform to obtain the main lines in the image.
   <img src="img/hough.png" width="400" height="265">
 </p>
 
-Transforming the coordinates $$ \rho. \theta $$
+Transforming the coordinates 
+
+$$
+{
+h_\theta(x) = P(y=1 | x ; \theta) = 1 - P(y=0 | x ; \theta) 
+}
+$$
 
 
 
