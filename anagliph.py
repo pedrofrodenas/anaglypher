@@ -148,7 +148,7 @@ shape = cv2.imread('images/carretera.jpg')
 
 
 # Scale input image to less time computation
-Image3D = ConvertImageto3D(shape, xscale=0.4, yscale=0.4)
+Image3D = ConvertImageto3D(shape, xscale=0.3, yscale=0.3)
 
 plt.figure()
 plt.imshow(Image3D)

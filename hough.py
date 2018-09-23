@@ -101,6 +101,7 @@ def hough_peaks(H, num_peaks, threshold=0, nhood_size=3):
 def plot_hough_acc(H, plot_title='Hough Accumulator Plot'):
     ''' A function that plot a Hough Space using Matplotlib. '''
     fig = plt.figure(figsize=(10, 10))
+    
     fig.canvas.set_window_title(plot_title)
     	
     plt.imshow(H, cmap='jet')
