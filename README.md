@@ -48,3 +48,9 @@ With the vanishing point coordinates, we build a Depth Map.
   <img src="img/cap1.png" width="400" height="265">
 </p>
 
+Finally, we construct with the depth map the parallax matrix and apply channel offset.
+
+<p align="center">
+  <img src="results/H1GF3.jpg">
+</p>
+
