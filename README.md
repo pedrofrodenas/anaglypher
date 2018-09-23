@@ -54,18 +54,21 @@ Finally, we construct with the depth map the parallax matrix and apply channel o
   <img src="results/H1GF3.jpg">
 </p>
 
-## Example
+## Example.py
 
 ```python
-//Load input image
-var baboon = require("luminance")(require("baboon-image"))
+import cv2
+import anagliph
+import string
+from random import choices
 
-//Allocate storage for result
-var result = require("zeros")([512, 512])
+# read in shapes image and convert to grayscale
+shape = cv2.imread('images/carretera.jpg')
 
-//Rotate the image
-require("image-rotate")(result, baboon, Math.PI / 6.0)
+# Scale input image to less time computation
+Image3D = anagliph.ConvertImageto3D(shape, xscale=0.3, yscale=0.3)
 
-//Save the result
-require("save-pixels")(result, "png").pipe(process.stdout)
+name = ''.join(choices(string.ascii_uppercase + string.digits, k=5))
+
+cv2.imwrite('results/{0}.jpg'.format(name),Image3D)
 ```
