@@ -14,6 +14,6 @@ My approach uses outdoor images. The vanishing point is the place where two or m
 
 This aproach needs outdoor images containing vanishing point. Like this:
 <p align="center">
-  <img src="images/carretera" width="972" height="648">
+  <img src="images/carretera.jpg" width="972" height="648">
 </p>
 
