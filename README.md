@@ -19,8 +19,14 @@ This aproach needs outdoor images containing vanishing point.
 
 ### Model
 
-First apply canny transform.
+First convert image to grayscale and apply canny transform.
 <p align="center">
   <img src="img/canny.png" width="400" height="265">
+</p>
+
+Then apply Hough transform to obtain the main lines in the image.
+
+<p align="center">
+  <img src="img/hough.png" width="400" height="265">
 </p>
 
