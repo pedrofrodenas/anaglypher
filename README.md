@@ -62,14 +62,16 @@ import anagliph
 import string
 from random import choices
 
-# read in shapes image and convert to grayscale
+# read 2D-Image input
 shape = cv2.imread('images/carretera.jpg')
 
-# Scale input image to less time computation
+# Scale input image for less time computation
 Image3D = anagliph.ConvertImageto3D(shape, xscale=0.3, yscale=0.3)
 
+# Random output image name
 name = ''.join(choices(string.ascii_uppercase + string.digits, k=5))
 
+# Save 3D-Anaglyph Image
 cv2.imwrite('results/{0}.jpg'.format(name),Image3D)
 ```
 
