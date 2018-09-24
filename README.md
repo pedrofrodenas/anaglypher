@@ -77,7 +77,7 @@ cv2.imwrite('results/{0}.jpg'.format(name),Image3D)
 
 ![results/WICZG.jpg](results/WICZG.jpg)
 ![results/H1GF3.jpg](results/H1GF3.jpg)
-![results/WICZG.jpg](results/WICZG.jpg)
+![results/LUK9B.jpg](results/LUK9B.jpg)
 ![results/7SNE1.jpg](results/7SNE1.jpg)
 
 ## License
