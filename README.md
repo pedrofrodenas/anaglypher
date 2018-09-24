@@ -1,4 +1,4 @@
-# 2D-to-3DAnaglyph-ImageConversion
+# Anaglyph estimation from mono images
 Anaglypher Python script for making anaglyph-3D maps from mono images.
 
 ## Overview
