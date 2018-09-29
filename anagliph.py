@@ -35,8 +35,13 @@ def plot_CutPoints(img, cutP, VanishP):
     
     
 
-
-def ConvertImageto3D(image, xscale, yscale):
+# xcale, yscale: image scale for less time computation
+# cannymin, cannymax: pixel values range to apply canny filter
+# nlines: number of lines to detect
+# threshold: minimum value in H space to be considered lines
+# nhood_size: minimum space between lines to be considered sigle lines. 
+def ConvertImageto3D(image, xscale, yscale, cannymin=100, cannymax=200,
+                     nlines=4,threshold=0.7, nhood_size=80):
     
     shapes = cv2.resize(image, (0,0), fx=xscale, fy=yscale)
     
@@ -51,14 +56,14 @@ def ConvertImageto3D(image, xscale, yscale):
     shapes_blurred = cv2.GaussianBlur(shapes_grayscale, (5, 5), 1.5)
 
     # find Canny Edges and show resulting image
-    canny_edges = cv2.Canny(shapes_blurred, 100, 200)
+    canny_edges = cv2.Canny(shapes_blurred, cannymin, cannymax)
     plt.imshow(canny_edges, cmap='gray')
     plt.title("Canny Edges")
 
     # run hough_lines_accumulator on the shapes canny_edges image
         
     H, rhos, thetas = hough.hough_lines_acc(canny_edges)
-    indicies, H = hough.hough_peaks(H, 4,threshold=0.7, nhood_size=80) # find peaks
+    indicies, H = hough.hough_peaks(H, nlines,threshold, nhood_size) # find peaks
     hough.plot_hough_acc(H) # plot hough space, brighter spots have higher votes
     hough.hough_lines_draw(shapes, indicies, rhos, thetas)
     
