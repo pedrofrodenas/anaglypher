@@ -66,7 +66,9 @@ from random import choices
 shape = cv2.imread('images/carretera.jpg')
 
 # Scale input image for less time computation
-Image3D = anagliph.ConvertImageto3D(shape, xscale=0.3, yscale=0.3)
+Image3D = anagliph.ConvertImageto3D(shape, xscale=0.3, yscale=0.3,
+                                    cannymin=100, cannymax=200,
+                                    nlines=4,threshold=0.7, nhood_size=80)
 
 # Random output image name
 name = ''.join(choices(string.ascii_uppercase + string.digits, k=5))
